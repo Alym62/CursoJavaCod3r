@@ -1,4 +1,4 @@
-package org.udemyCoder.classe;
+package org.udemyCoder.classe_metodos.produto;
 
 public class Produto {
     private String nome;
@@ -34,5 +34,13 @@ public class Produto {
     @Override
     public String toString() {
         return String.format("Produto=[Nome: %s, Preço: %s, Desconto: %s]", nome, preco, desconto);
+    }
+
+    public double precoComDesconto() {
+        return preco * (1 - desconto);
+    }
+
+    public double precoComDesconto(double descontoDoGerente) {
+        return preco * (1 - desconto + descontoDoGerente);
     }
 }
