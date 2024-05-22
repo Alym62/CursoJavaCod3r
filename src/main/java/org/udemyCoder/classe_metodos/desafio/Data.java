@@ -15,6 +15,12 @@ public class Data {
 
     public Data() {}
 
+    public Data(DayOfWeek dia, Month mes, Year ano) {
+        this.dia = dia;
+        this.mes = mes;
+        this.ano = ano;
+    }
+
     public DayOfWeek getDia() {
         return dia;
     }
