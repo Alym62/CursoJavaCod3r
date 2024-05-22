@@ -5,10 +5,11 @@ public class ProdutoTeste {
         Produto produto;
         Produto produtoConstrutor;
         produto = new Produto();
-        produtoConstrutor = new Produto("Iphone 14", 7.500, 350);
+        produtoConstrutor = new Produto("Iphone 14", 7.500);
         produto.setNome("Carregador de iphone");
         produto.setPreco(200);
-        produto.setDesconto(120);
+
+        Produto.setDesconto(0.50);
 
         double precoFinalCarregador = produto.precoComDesconto(20);
         double precoFinalIphone = produtoConstrutor.precoComDesconto(10);

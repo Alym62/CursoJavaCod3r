@@ -3,14 +3,13 @@ package org.udemyCoder.classe_metodos.produto;
 public class Produto {
     private String nome;
     private double preco;
-    private double desconto;
+    private static double desconto = 0.25;
 
     public Produto() {}
 
-    public Produto(String nome, double preco, double desconto) {
+    public Produto(String nome, double preco) {
         this.nome = nome;
         this.preco = preco;
-        this.desconto = desconto;
     }
 
     public String getNome() {
@@ -33,8 +32,8 @@ public class Produto {
         return desconto;
     }
 
-    public void setDesconto(double desconto) {
-        this.desconto = desconto;
+    public static void setDesconto(double desconto) {
+        Produto.desconto = desconto;
     }
 
     @Override
