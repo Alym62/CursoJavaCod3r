@@ -37,7 +37,7 @@ public class Pessoa {
             System.out.printf("%s está comendo %s%n", Objects.nonNull(getName()) ? getName() : "Sem nome",
                     Objects.nonNull(comida.getNameFood()) ? comida.getNameFood() : "Alimento sem nome");
 
-            var pesoAtualDaPessoa = getWeight() - comida.getFoodWeight();
+            var pesoAtualDaPessoa = getWeight() + comida.getFoodWeight();
 
             System.out.println(weightFormated(getName(), pesoAtualDaPessoa));
     }
