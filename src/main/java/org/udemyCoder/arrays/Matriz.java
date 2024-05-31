@@ -1,5 +1,6 @@
 package org.udemyCoder.arrays;
 
+import java.util.Arrays;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -23,6 +24,10 @@ public class Matriz {
 
                 total += notasDaTurma[notaDaTurma][nota];
             }
+        }
+
+        for (double[] notasDoAluno : notasDaTurma) {
+            System.out.println(Arrays.toString(notasDoAluno));
         }
 
         System.out.println("A média da turma é: " + total / (quantidadeAlunos * quantidadeDeNotaPorAluno));
