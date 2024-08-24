@@ -1,8 +1,24 @@
 package org.udemyCoder.poo.heranca;
 
 public class Jogador {
+    private int vida = 100;
     private int x;
     private int y;
+
+    boolean atacar(Jogador player) {
+        int deltaX = Math.abs(x - player.getX());
+        int deltaY = Math.abs(y - player.getY());
+
+        if (deltaX == 0 && deltaY == 1) {
+            player.setVida(player.getVida() - 10);
+            return true;
+        } else if (deltaX == 1 && deltaY == 0) {
+            player.setVida(player.getVida() - 10);
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     void andar(Direcao direcao) {
         switch (direcao) {
@@ -27,5 +43,13 @@ public class Jogador {
 
     public void setY(int y) {
         this.y = y;
+    }
+
+    public int getVida() {
+        return vida;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
     }
 }

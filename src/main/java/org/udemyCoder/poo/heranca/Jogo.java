@@ -2,16 +2,22 @@ package org.udemyCoder.poo.heranca;
 
 public class Jogo {
     public static void main(String[] args) {
-        Jogador playerOne = new Jogador();
+        Monstro playerOne = new Monstro();
         playerOne.setX(10);
-        playerOne.setY(20);
+        playerOne.setY(10);
 
-        playerOne.andar(Direcao.NORTE);
-        playerOne.andar(Direcao.NORTE);
-        playerOne.andar(Direcao.LESTE);
-        playerOne.andar(Direcao.SUL);
+        Heroi playerTwo = new Heroi();
+        playerTwo.setX(10);
+        playerTwo.setY(11);
 
-        System.out.println("Valor de x: " + playerOne.getX());
-        System.out.println("Valor de y: " + playerOne.getY());
+        System.out.println("Vida jogador 1: " + playerOne.getVida());
+        System.out.println("Vida jogador 2: " + playerTwo.getVida());
+
+        System.out.println("===================================>");
+
+        playerOne.atacar(playerTwo);
+
+        System.out.println("Vida jogador 1: " + playerOne.getVida());
+        System.out.println("Vida jogador 2: " + playerTwo.getVida());
     }
 }
