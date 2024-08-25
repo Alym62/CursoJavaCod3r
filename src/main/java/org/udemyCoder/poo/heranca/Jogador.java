@@ -5,6 +5,15 @@ public class Jogador {
     private int x;
     private int y;
 
+    public Jogador() {
+        this(0, 0);
+    }
+
+    public Jogador(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
     boolean atacar(Jogador player) {
         int deltaX = Math.abs(x - player.getX());
         int deltaY = Math.abs(y - player.getY());

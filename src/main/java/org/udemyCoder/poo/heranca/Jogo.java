@@ -6,9 +6,7 @@ public class Jogo {
         monstro.setX(10);
         monstro.setY(10);
 
-        Heroi heroi = new Heroi();
-        heroi.setX(10);
-        heroi.setY(11);
+        Heroi heroi = new Heroi(10, 11);
 
         System.out.println("Monstro => " + monstro.getVida());
         System.out.println("Heroi => " + heroi.getVida());
