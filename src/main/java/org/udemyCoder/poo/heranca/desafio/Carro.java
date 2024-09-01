@@ -2,15 +2,14 @@ package org.udemyCoder.poo.heranca.desafio;
 
 public class Carro {
     private final int VELOCIDADE_MAXIMA;
-    private int velocidade = 40;
+    private int velocidade = 0;
 
     public Carro(int velocidadeMaxima) {
         this.VELOCIDADE_MAXIMA = velocidadeMaxima;
     }
 
     void acelerar() {
-        if (velocidade > VELOCIDADE_MAXIMA) {
-            velocidade = VELOCIDADE_MAXIMA;
+        if (velocidade >= VELOCIDADE_MAXIMA) {
             System.out.println("Você está na velocidade máxima => " + velocidade);
         } else {
             var resultado = velocidade += 5;

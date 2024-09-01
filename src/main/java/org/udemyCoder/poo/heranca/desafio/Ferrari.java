@@ -1,6 +1,10 @@
 package org.udemyCoder.poo.heranca.desafio;
 
 public class Ferrari extends Carro{
+    public Ferrari(int velocidadeMaxima) {
+        super(velocidadeMaxima);
+    }
+
     @Override
     void acelerar() {
         setVelocidade(getVelocidade() + 15);
