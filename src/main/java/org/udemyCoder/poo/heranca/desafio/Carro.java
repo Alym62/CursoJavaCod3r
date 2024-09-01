@@ -1,29 +1,39 @@
 package org.udemyCoder.poo.heranca.desafio;
 
 public class Carro {
-    private int valocidade = 40;
+    private final int VELOCIDADE_MAXIMA;
+    private int velocidade = 40;
+
+    public Carro(int velocidadeMaxima) {
+        this.VELOCIDADE_MAXIMA = velocidadeMaxima;
+    }
 
     void acelerar() {
-        var resultado = valocidade += 5;
-        System.out.println("Acelerando... Sua valocidade atual => " + resultado);
+        if (velocidade > VELOCIDADE_MAXIMA) {
+            velocidade = VELOCIDADE_MAXIMA;
+            System.out.println("Você está na velocidade máxima => " + velocidade);
+        } else {
+            var resultado = velocidade += 5;
+            System.out.println("Acelerando... Sua valocidade atual => " + resultado);
+        }
     }
 
     void freiar() {
-        if (valocidade <= 0) {
+        if (velocidade <= 0) {
             System.out.println("Ops! Você já está parado.");
             return;
         }
 
-        var resultado = valocidade -= 5;
+        var resultado = velocidade -= 5;
 
         System.out.println("Freiando... Sua valocidade atual => " + resultado);
     }
 
-    public int getValocidade() {
-        return valocidade;
+    public int getVelocidade() {
+        return velocidade;
     }
 
-    public void setValocidade(int valocidade) {
-        this.valocidade = valocidade;
+    public void setVelocidade(int velocidade) {
+        this.velocidade = velocidade;
     }
 }
