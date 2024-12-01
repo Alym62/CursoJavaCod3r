@@ -1,5 +1,7 @@
 package org.udemyCoder.lambdas;
 
+import java.util.function.BinaryOperator;
+
 public class CalculoTeste {
     public static void main(String[] args) {
         Calculo calculo = new Somar();
@@ -21,7 +23,18 @@ public class CalculoTeste {
 
         soma = (x, y) -> x * y;
         System.out.println(soma.executar(5, 5));
+
+        // @TODO: Método default
         System.out.println(soma.info());
+
+        // @TODO: Método estático
         System.out.println(Calculo.infoData());
+
+        // @TODO: Interfaces funcionais definidas pelo Java
+        BinaryOperator<Double> calc = (x, y) -> x + y;
+        System.out.println(calc.apply(10.0, 10.0));
+
+        BinaryOperator<Integer> multi = (x, y) -> x * y;
+        System.out.println(multi.apply(10, 10));
     }
 }
