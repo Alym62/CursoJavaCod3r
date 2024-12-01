@@ -21,5 +21,7 @@ public class CalculoTeste {
 
         soma = (x, y) -> x * y;
         System.out.println(soma.executar(5, 5));
+        System.out.println(soma.info());
+        System.out.println(Calculo.infoData());
     }
 }
