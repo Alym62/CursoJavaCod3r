@@ -1,5 +1,7 @@
 package org.udemyCoder.lambdas;
 
+import org.udemyCoder.lambdas.auxiliadores.Produto;
+
 import java.util.function.Predicate;
 
 public class Predicado {

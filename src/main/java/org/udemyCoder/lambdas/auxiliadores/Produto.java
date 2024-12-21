@@ -1,4 +1,4 @@
-package org.udemyCoder.lambdas;
+package org.udemyCoder.lambdas.auxiliadores;
 
 public class Produto extends Object {
     private final String nome;

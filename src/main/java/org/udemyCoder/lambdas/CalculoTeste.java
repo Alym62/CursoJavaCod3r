@@ -1,5 +1,9 @@
 package org.udemyCoder.lambdas;
 
+import org.udemyCoder.lambdas.auxiliadores.Calculo;
+import org.udemyCoder.lambdas.auxiliadores.Multiplicar;
+import org.udemyCoder.lambdas.auxiliadores.Somar;
+
 import java.util.function.BinaryOperator;
 
 public class CalculoTeste {

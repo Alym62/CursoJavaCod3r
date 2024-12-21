@@ -1,4 +1,4 @@
-package org.udemyCoder.lambdas;
+package org.udemyCoder.lambdas.auxiliadores;
 
 public class Multiplicar implements Calculo{
     @Override
