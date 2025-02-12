@@ -11,5 +11,11 @@ public class DesafioMap {
         * 2 - Inverter a string... "110" => "011"
         * 3 - Converter novamente para inteiro => 3
         * */
+
+        nums.stream()
+                .map(Integer::toBinaryString)
+                .map(str -> new StringBuilder(str).reverse().toString())
+                .map(strReverse -> Integer.parseInt(strReverse, 2))
+                .forEach(System.out::println);
     }
 }
