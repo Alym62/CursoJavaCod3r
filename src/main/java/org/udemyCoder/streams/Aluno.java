@@ -22,4 +22,13 @@ public class Aluno {
     public boolean isBomComportamento() {
         return bomComportamento;
     }
+
+    @Override
+    public String toString() {
+        return "Aluno{" +
+                "nome='" + nome + '\'' +
+                ", nota=" + nota +
+                ", bomComportamento=" + bomComportamento +
+                '}';
+    }
 }
