@@ -1,4 +1,6 @@
-package org.udemyCoder.poo.heranca;
+package org.udemyCoder.poo.heranca.jogador;
+
+import org.udemyCoder.poo.heranca.Direcao;
 
 public class Jogador {
     private int vida = 100;
@@ -14,7 +16,7 @@ public class Jogador {
         this.y = y;
     }
 
-    boolean atacar(Jogador player) {
+    protected boolean atacar(Jogador player) {
         int deltaX = Math.abs(x - player.getX());
         int deltaY = Math.abs(y - player.getY());
 
@@ -29,7 +31,7 @@ public class Jogador {
         }
     }
 
-    void andar(Direcao direcao) {
+    protected void andar(Direcao direcao) {
         switch (direcao) {
             case NORTE -> y--;
             case LESTE -> x++;

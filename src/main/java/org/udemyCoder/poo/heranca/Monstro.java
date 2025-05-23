@@ -1,11 +1,9 @@
 package org.udemyCoder.poo.heranca;
 
-public class Monstro extends Jogador{
+import org.udemyCoder.poo.heranca.jogador.Jogador;
+
+public class Monstro extends Jogador {
     public Monstro() {
         super(0, 0);
-    }
-
-    public Monstro(int x, int y) {
-        super(x, y);
     }
 }
