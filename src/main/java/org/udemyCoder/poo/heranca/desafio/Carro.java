@@ -8,7 +8,7 @@ public class Carro {
         this.VELOCIDADE_MAXIMA = velocidadeMaxima;
     }
 
-    void acelerar() {
+    protected void acelerar() {
         if (velocidade >= VELOCIDADE_MAXIMA) {
             System.out.println("Você está na velocidade máxima => " + velocidade);
         } else {
@@ -17,7 +17,7 @@ public class Carro {
         }
     }
 
-    void freiar() {
+    protected void freiar() {
         if (velocidade <= 0) {
             System.out.println("Ops! Você já está parado.");
             return;
@@ -28,11 +28,19 @@ public class Carro {
         System.out.println("Freiando... Sua valocidade atual => " + resultado);
     }
 
-    public int getVelocidade() {
+    protected int getVelocidade() {
         return velocidade;
     }
 
+    protected int getVelocidadeMaxima() {
+        return VELOCIDADE_MAXIMA;
+    }
+
     public void setVelocidade(int velocidade) {
+        if (this.velocidade == getVelocidadeMaxima()) {
+            throw new VelocidadeException("Velocidade máxima atingida");
+        }
+
         this.velocidade = velocidade;
     }
 }
