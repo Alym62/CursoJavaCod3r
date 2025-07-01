@@ -32,7 +32,15 @@ public class Carro {
         return velocidade;
     }
 
+    protected int getVelocidadeMaxima() {
+        return VELOCIDADE_MAXIMA;
+    }
+
     public void setVelocidade(int velocidade) {
+        if (this.velocidade == getVelocidadeMaxima()) {
+            throw new VelocidadeException("Velocidade máxima atingida");
+        }
+
         this.velocidade = velocidade;
     }
 }
