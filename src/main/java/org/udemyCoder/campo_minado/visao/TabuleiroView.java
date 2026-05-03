@@ -57,8 +57,10 @@ public class TabuleiroView {
                 }
             }
 
+            System.out.println(this.tabuleiro);
             System.out.println("Você ganhou!");
         } catch (ExplosaoException exception) {
+            System.out.println(this.tabuleiro);
             System.out.println(exception.getMessage());
         }
     }

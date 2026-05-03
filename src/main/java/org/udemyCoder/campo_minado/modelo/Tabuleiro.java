@@ -1,5 +1,7 @@
 package org.udemyCoder.campo_minado.modelo;
 
+import org.udemyCoder.campo_minado.excecao.ExplosaoException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,9 +34,14 @@ public class Tabuleiro {
     }
 
     public void abrirCampo(int linha, int coluna) {
-        this.campos.stream().filter(campo -> campo.getLinha() == linha && campo.getColuna() == coluna)
-                .findFirst()
-                .ifPresent(Campo::abrir);
+        try {
+            this.campos.stream().filter(campo -> campo.getLinha() == linha && campo.getColuna() == coluna)
+                    .findFirst()
+                    .ifPresent(Campo::abrir);
+        } catch (ExplosaoException exception) {
+            this.campos.forEach(campo -> campo.setAberto(true));
+            throw exception;
+        }
     }
 
     public void marcarCampo(int linha, int coluna) {
@@ -46,9 +53,9 @@ public class Tabuleiro {
     private void sortearCamposMinados() {
         long totalDeMinas = 0L;
         while (totalDeMinas < this.minas) {
-            totalDeMinas = this.campos.stream().filter(Campo::isMinado).count();
             final int aleatorio = (int) (Math.random() * campos.size());
             this.campos.get(aleatorio).setMinado(true);
+            totalDeMinas = this.campos.stream().filter(Campo::isMinado).count();
         }
     }
 
@@ -73,7 +80,17 @@ public class Tabuleiro {
         final StringBuilder sb = new StringBuilder();
         int index = 0;
 
+        sb.append("    ");
+        for (int coluna = 0; coluna < this.colunas; coluna++) {
+            sb.append(" ");
+            sb.append(coluna);
+            sb.append(" ");
+        }
+        sb.append("\n");
+
         for (int linha = 0; linha < this.linhas; linha++) {
+            sb.append(linha);
+            sb.append(" - ");
             for (int coluna = 0; coluna < this.colunas; coluna++) {
                 sb.append(" ");
                 sb.append(this.campos.get(index));
