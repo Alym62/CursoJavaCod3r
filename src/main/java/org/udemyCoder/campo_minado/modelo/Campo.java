@@ -121,8 +121,8 @@ public class Campo {
     @Override
     public String toString() {
         final Long totalMinasNaVizinhanca = this.minasNaVizinhanca();
-        if (!this.marcado) {
-            return "x";
+        if (this.marcado) {
+            return "🚩";
         } else if (this.aberto && this.minado) {
             return "💣";
         } else if (this.aberto && totalMinasNaVizinhanca > 0) {
