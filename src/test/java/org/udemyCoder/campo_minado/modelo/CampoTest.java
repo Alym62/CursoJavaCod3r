@@ -116,6 +116,6 @@ class CampoTest {
         final ExplosaoException exception = assertThrows(ExplosaoException.class, () -> this.campo.abrir());
 
         assertNotNull(exception);
-        assertEquals("Fim de jogo!", exception.getMessage());
+        assertEquals("Você perdeu! Fim de jogo!", exception.getMessage());
     }
 }

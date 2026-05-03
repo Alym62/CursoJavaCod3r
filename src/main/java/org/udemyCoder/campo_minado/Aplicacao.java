@@ -6,8 +6,8 @@ import org.udemyCoder.campo_minado.visao.TabuleiroView;
 public class Aplicacao {
     public static void main(String[] args) {
         final Tabuleiro tabuleiro = new Tabuleiro(6, 6, 6);
-        new TabuleiroView(tabuleiro);
+        final TabuleiroView view = new TabuleiroView(tabuleiro);
 
-        System.out.println(tabuleiro);
+        view.executarJogo();
     }
 }
